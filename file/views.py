@@ -22,7 +22,7 @@ class FileDownloadView(APIView):
 
     def get(self, request, file_name):
         try:
-            file = File.objects.get(name=file_name)
+            file = File.objects.get(name=file_name, is_deleted=False)
             file_path = file.address
             if os.path.exists(file_path):
                 DownloadLog.objects.create(user=request.user, file=file)
