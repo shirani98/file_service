@@ -5,7 +5,7 @@ import os
 
 @shared_task
 def scan_filesystem():
-    base_directory = "/home/mahdi/test_mehdi/"
+    base_directory = "/home/mahdi/test_mehdi/"  # Change_data
     for dirpath, _, filenames in os.walk(base_directory):
         for filename in filenames:
             file_path = os.path.join(dirpath, filename)

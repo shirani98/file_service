@@ -31,14 +31,27 @@ celery -A ftp_service beat --loglevel=info
 
 ```
 
-4. **Start the development server:**
+4. **Set default data:**
+In this step, you should set default data like login data or FTP IP in the client file, sync files, and tasks file. search # Change_data in project to find Changeable data.
+
+
+5. **Start the development server:**
 ```bash
 python manage.py runserver
 ```
 
+6. **Add permission run to bash script:**
+```bash
+chmod +x sync_files.sh
+```
+
+7. **Start the Client script:**
+```bash
+python client.py
+```
 
 ## Usage
 
 1. Access the web application by visiting http://localhost:8000 in your web browser.
 2. Log in with your credentials or register for a new account if you don't have one.
-3. Once logged in, you can view the list of files, download files, and see your download history.
+3. you can view the list of files and after login download files.
